@@ -9,16 +9,16 @@ class Database:
             self.db = mysql.connector.connect(host='localhost', database='data_baju',user='root',password='')
             if self.db.is_connected():
                 # db_info = self.db.get_server_info()
-                print("Berhasil Terhubung ")
+                # print("Berhasil Terhubung ")
                 self.cursor = self.db.cursor()
         except MysqlError as error:
             print("Tidak bisa terhubung database ", error)
 
-    def set_query(self, string_query):
-        self.cursor.execute(string_query)
+    def set_query(self, string_query, value = None):
+        self.cursor.execute(string_query, value )
         return self
 
-    def execute(self):
+    def commit(self):
         self.db.commit()
         return self
 
@@ -38,11 +38,11 @@ class Database:
 
     def closeconn(self):
         if self.db.is_connected():
-            self.execute.close()
+            self.commit.close()
             self.db.close()
             print("Koneksi ditutup")
 
-Database()
+
 # instance class database
 # db = Database()
 # val = ("182410102056", "Denta", "Teknologi Informasi")
@@ -59,9 +59,13 @@ Database()
 # print("Hasil :", db.fetchall())
 #
 # # tes tambah data : CRUD (Create)
-# val = ("182410102080", "Gilang", "Teknologi Informasi")
-# print(db.set_query("INSERT INTO mahasiswa (nim, nama, prodi) VALUES (%s, %s, %s)", val)\
-#         .execute()\
-#         .get_rowcount())
+db = Database()
+
+# val = (nama, kuantitas, harga)
+#
+# query = db.set_query ("INSERT INTO `transaksi`(`nama barang`, `kuantitas`, `harga`) VALUES (%s,%s,%s)",val)
+# query.commit()
+# print(db.set_query().execute().get_rowcount())
 # db.execute()
 # db.get_rowcount()
+
