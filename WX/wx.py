@@ -70,22 +70,22 @@ class wxLoginPanel ( wx.Panel ):
 
 		fgSizer2.Add( self.m_staticText10, 0, wx.ALL, 5 )
 
-		self.m_textCtrl4 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer2.Add( self.m_textCtrl4, 0, wx.ALL, 5 )
+		self.textCtrlIdPeg = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer2.Add( self.textCtrlIdPeg, 0, wx.ALL, 5 )
 
 		self.m_staticText8 = wx.StaticText( self, wx.ID_ANY, u"Password", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText8.Wrap( -1 )
 
 		fgSizer2.Add( self.m_staticText8, 0, wx.ALL, 5 )
 
-		self.m_textCtrl5 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer2.Add( self.m_textCtrl5, 0, wx.ALL, 5 )
+		self.textCtrlPassword = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_PASSWORD )
+		fgSizer2.Add( self.textCtrlPassword, 0, wx.ALL, 5 )
 
 
 		fgSizer2.Add( ( 0, 0), 1, wx.EXPAND, 5 )
 
-		self.m_button4 = wx.Button( self, wx.ID_ANY, u"LOGIN", wx.DefaultPosition, wx.DefaultSize, 0 )
-		fgSizer2.Add( self.m_button4, 0, wx.ALL, 5 )
+		self.btnLogin = wx.Button( self, wx.ID_ANY, u"LOGIN", wx.DefaultPosition, wx.DefaultSize, 0 )
+		fgSizer2.Add( self.btnLogin, 0, wx.ALL, 5 )
 
 
 		bSizer8.Add( fgSizer2, 1, wx.EXPAND, 5 )
@@ -103,8 +103,16 @@ class wxLoginPanel ( wx.Panel ):
 		self.SetSizer( bSizer3 )
 		self.Layout()
 
+		# Connect Events
+		self.btnLogin.Bind( wx.EVT_BUTTON, self.btnLoginOnButtonClick )
+
 	def __del__( self ):
 		pass
+
+
+	# Virtual event handlers, overide them in your derived class
+	def btnLoginOnButtonClick( self, event ):
+		event.Skip()
 
 
 ###########################################################################
