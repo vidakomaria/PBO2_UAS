@@ -133,28 +133,37 @@ class wxTransaksiPanel ( wx.Panel ):
 		self.m_staticText31 = wx.StaticText( self.m_panel6, wx.ID_ANY, u"Transaksi", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText31.Wrap( -1 )
 
-		bSizer30.Add( self.m_staticText31, 0, wx.ALL, 5 )
+		bSizer30.Add( self.m_staticText31, 0, 0, 5 )
 
 
 		self.m_panel6.SetSizer( bSizer30 )
 		self.m_panel6.Layout()
 		bSizer30.Fit( self.m_panel6 )
-		bSizer14.Add( self.m_panel6, 1, wx.EXPAND |wx.ALL, 5 )
+		bSizer14.Add( self.m_panel6, 1, wx.ALIGN_CENTER_VERTICAL, 5 )
 
-		self.m_button37 = wx.Button( self, wx.ID_ANY, u"Transaksi", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer14.Add( self.m_button37, 0, wx.ALL, 5 )
+		self.m_panel15 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
+		bSizer41 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_button6 = wx.Button( self, wx.ID_ANY, u"Produk", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer14.Add( self.m_button6, 0, wx.ALL, 5 )
+		self.m_button37 = wx.Button( self.m_panel15, wx.ID_ANY, u"Transaksi", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer41.Add( self.m_button37, 0, wx.ALL, 5 )
 
-		self.m_button7 = wx.Button( self, wx.ID_ANY, u"Supplier", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer14.Add( self.m_button7, 0, wx.ALL, 5 )
+		self.m_button6 = wx.Button( self.m_panel15, wx.ID_ANY, u"Produk", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer41.Add( self.m_button6, 0, wx.ALL, 5 )
 
-		self.m_button9 = wx.Button( self, wx.ID_ANY, u"Logout", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer14.Add( self.m_button9, 0, wx.ALL, 5 )
+		self.m_button7 = wx.Button( self.m_panel15, wx.ID_ANY, u"Supplier", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer41.Add( self.m_button7, 0, wx.ALL, 5 )
+
+		self.m_button9 = wx.Button( self.m_panel15, wx.ID_ANY, u"Logout", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer41.Add( self.m_button9, 0, wx.ALL, 5 )
 
 
-		bSizer13.Add( bSizer14, 0, wx.EXPAND, 5 )
+		self.m_panel15.SetSizer( bSizer41 )
+		self.m_panel15.Layout()
+		bSizer41.Fit( self.m_panel15 )
+		bSizer14.Add( self.m_panel15, 0, wx.ALL, 5 )
+
+
+		bSizer13.Add( bSizer14, 0, 0, 5 )
 
 		self.m_panel7 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		self.m_panel7.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNHIGHLIGHT ) )
@@ -203,14 +212,14 @@ class wxTransaksiPanel ( wx.Panel ):
 
 		bSizer27 = wx.BoxSizer( wx.VERTICAL )
 
-		self.m_textCtrl16 = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer27.Add( self.m_textCtrl16, 0, wx.ALL, 5 )
+		self.textCtrlNamaBrgTrans = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer27.Add( self.textCtrlNamaBrgTrans, 0, wx.ALL, 5 )
 
-		self.m_textCtrl171 = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer27.Add( self.m_textCtrl171, 0, wx.ALL, 5 )
+		self.textCtrlKuantitasTrans = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer27.Add( self.textCtrlKuantitasTrans, 0, wx.ALL, 5 )
 
-		self.m_textCtrl181 = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer27.Add( self.m_textCtrl181, 0, wx.ALL, 5 )
+		self.textCtrlHrgTrans = wx.TextCtrl( self.m_panel7, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer27.Add( self.textCtrlHrgTrans, 0, wx.ALL, 5 )
 
 
 		fgSizer9.Add( bSizer27, 1, wx.EXPAND, 5 )
@@ -306,14 +315,22 @@ class wxTransaksiPanel ( wx.Panel ):
 		bSizer15.Add( fgSizer5, 1, wx.EXPAND, 5 )
 
 
-		bSizer13.Add( bSizer15, 1, wx.EXPAND, 5 )
+		bSizer13.Add( bSizer15, 0, 0, 5 )
 
 
 		self.SetSizer( bSizer13 )
 		self.Layout()
 
+		# Connect Events
+		self.m_button12.Bind( wx.EVT_BUTTON, self.btnTmbhTransOnButtonClick )
+
 	def __del__( self ):
 		pass
+
+
+	# Virtual event handlers, overide them in your derived class
+	def btnTmbhTransOnButtonClick( self, event ):
+		event.Skip()
 
 
 ###########################################################################
@@ -343,7 +360,7 @@ class wxProdukPanel ( wx.Panel ):
 		self.m_panel6.SetSizer( bSizer30 )
 		self.m_panel6.Layout()
 		bSizer30.Fit( self.m_panel6 )
-		bSizer14.Add( self.m_panel6, 1, wx.EXPAND |wx.ALL, 5 )
+		bSizer14.Add( self.m_panel6, 1, wx.ALL, 5 )
 
 		self.m_button6 = wx.Button( self, wx.ID_ANY, u"Transaksi", wx.DefaultPosition, wx.DefaultSize, 0 )
 		bSizer14.Add( self.m_button6, 0, wx.ALL, 5 )
@@ -434,7 +451,7 @@ class wxProdukPanel ( wx.Panel ):
 		self.m_panel7.SetSizer( bSizer20 )
 		self.m_panel7.Layout()
 		bSizer20.Fit( self.m_panel7 )
-		bSizer13.Add( self.m_panel7, 1, wx.ALL|wx.EXPAND, 5 )
+		bSizer13.Add( self.m_panel7, 0, wx.ALL|wx.EXPAND, 5 )
 
 		bSizer15 = wx.BoxSizer( wx.HORIZONTAL )
 
@@ -510,23 +527,7 @@ class wxProdukPanel ( wx.Panel ):
 		bSizer15.Add( fgSizer5, 1, wx.EXPAND, 5 )
 
 
-		bSizer13.Add( bSizer15, 1, wx.EXPAND, 5 )
-
-		self.m_panel61 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		self.m_panel61.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_INFOBK ) )
-
-		bSizer301 = wx.BoxSizer( wx.VERTICAL )
-
-		self.m_staticText311 = wx.StaticText( self.m_panel61, wx.ID_ANY, u"Transaksi", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText311.Wrap( -1 )
-
-		bSizer301.Add( self.m_staticText311, 0, wx.ALL, 5 )
-
-
-		self.m_panel61.SetSizer( bSizer301 )
-		self.m_panel61.Layout()
-		bSizer301.Fit( self.m_panel61 )
-		bSizer13.Add( self.m_panel61, 1, wx.EXPAND |wx.ALL, 5 )
+		bSizer13.Add( bSizer15, 0, 0, 5 )
 
 
 		self.SetSizer( bSizer13 )
