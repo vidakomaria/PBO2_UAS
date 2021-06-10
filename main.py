@@ -1,23 +1,16 @@
 import wx
-import WX.wx as frame
-import login_panel as pLogin
+import wxFrame
+import panel
 
-class Init:
-    login = pLogin.PanelLogin
-    @staticmethod
-    def base (parent):
-        Init.login = pLogin.PanelLogin(parent)
-        Init.initPanel()
-
-    @staticmethod
-    def initPanel():
-        Init.login.Hide()
-
-class Frame (frame.Frame):
+class Frame (wxFrame.Frame):
     def __init__(self, parent):
-        frame.Frame.__init__(self, parent)
-        Init.base(self)
-        Init.login.Show()
+        wxFrame.Frame.__init__(self, parent)
+        panel.Init.base(self)
+        panel.Init.login.Show()
+
+    def FrameOnSize( self, event ):
+        panel.Init.login.SetSize(self.GetSize())
+        panel.Init.transaksi.SetSize(self.GetSize())
 
 
 app = wx.App()
