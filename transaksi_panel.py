@@ -10,7 +10,6 @@ class panelTransaksi (wxFrame.wxTransaksiPanel):
         self.showOnTabel()
 
     def showOnTabel(self):
-        print ('showontabel')
         query = self.conn.set_query("select * from `transaksi`")
         hasil = query.fetchall()
         print(hasil)
@@ -26,7 +25,7 @@ class panelTransaksi (wxFrame.wxTransaksiPanel):
 
         self.tabelTransaksi.AutoSize()
 
-    def btnTmbhTransOnButtonClick( self, event ):
+    def btnTmbhOnButtonClick( self, event ):
         nama = self.textCtrlNamaBrgTrans.GetValue()
         kuantitas = self.textCtrlKuantitasTrans.GetValue()
         hrg = self.textCtrlHrgTrans.GetValue()
@@ -39,7 +38,58 @@ class panelTransaksi (wxFrame.wxTransaksiPanel):
         else:
             wx.MessageBox("Data Transaksi gagal Ditambah", "Gagal" | wx.ICON_ERROR)
 
+    def btnDeleteTransOnButtonClick( self, event ):
+        id = self.textCtrlIdUpdate.GetValue()
+        query = self.conn.set_query("DELETE FROM `transaksi` WHERE id = '%s'" % (id))
+
+        if wx.MessageBox("Delete Transaksi?", "Confirm", wx.YES_NO | wx.NO_DEFAULT, self) == wx.YES:
+            if (query.commit()):
+                wx.MessageBox("Berhasil")
+
+    def btnUpdateTransOnButtonClick( self, event ):
+        id = self.textCtrlIdUpdate.GetValue()
+        nama = self.textCtrlNamaBrgUpdate.GetValue()
+        kuantitas = self.textCtrlKuantitasUpdate.GetValue()
+        hrg = self.textCtrlHrgUpdate.GetValue()
+        value = (nama, kuantitas, hrg, id)
+        query = self.conn.set_query("UPDATE `transaksi` SET `nama barang` = %s, `kuantitas` = %s, `harga`= %s) WHERE id = '%s'" % (value))
+
+        if wx.MessageBox("Delete Transaksi?", "Confirm", wx.YES_NO | wx.NO_DEFAULT, self) == wx.YES:
+            if (query.commit()):
+                wx.MessageBox("Berhasil")
+
+    def btnRefreshOnButtonClick( self, event ):
+        self.showOnTabel()
+
+    def showOnTextControl(self, row):
+        id = self.tabelTransaksi.GetCellValue(row,0)
+        namaBrg = self.tabelTransaksi.GetCellValue(row,1)
+        kuantitas = self.tabelTransaksi.GetCellValue(row,2)
+        hrg = self.tabelTransaksi.GetCellValue(row,3)
+
+        self.textCtrlIdUpdate.SetValue(id)
+        self.textCtrlNamaBrgUpdate.SetValue(namaBrg)
+        self.textCtrlKuantitasUpdate.SetValue(kuantitas)
+        self.textCtrlHrgUpdate.SetValue(hrg)
+
     def clearText(self):
         self.textCtrlNamaBrgTrans.SetValue('')
         self.textCtrlHrgTrans.SetValue('')
         self.textCtrlKuantitasTrans.SetValue('')
+
+    def tabelTransaksiOnGridCmdSelectCell( self, event ):
+        row = event.GetRow()
+        self.showOnTextControl(row)
+
+    # def enableTextCtrl(self, enable=None):
+    #     if enable is True:
+    #         self.textCtrlIdUpdate.Enable()
+    #         self.textCtrlNamaBrgUpdate.Enable()
+    #         self.textCtrlKuantitasUpdate.Enable()
+    #         self.textCtrlHrgUpdate.Enable()
+    #     else:
+    #         self.textCtrlIdUpdate.Disable()
+    #         self.textCtrlNamaBrgUpdate.Disable()
+    #         self.textCtrlKuantitasUpdate.Disable()
+    #         self.textCtrlHrgUpdate.Disable()
+
