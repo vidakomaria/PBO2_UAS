@@ -30,9 +30,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Referensi/pbo2_mahasiswa/src" />
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.database (1)">
     <configuration name="database (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Kode" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -140,10 +140,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.database (1)" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.transaksi_panel" />
         <item itemvalue="Python.login_panel" />
-        <item itemvalue="Python.database (1)" />
         <item itemvalue="Python.database" />
       </list>
     </recent_temporary>
