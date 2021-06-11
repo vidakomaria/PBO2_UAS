@@ -59,7 +59,7 @@
         <object class="Panel" expanded="1">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
-            <property name="bg"></property>
+            <property name="bg">144,144,144</property>
             <property name="context_help"></property>
             <property name="context_menu">1</property>
             <property name="enabled">1</property>
@@ -129,7 +129,7 @@
                                         <property name="enabled">1</property>
                                         <property name="fg"></property>
                                         <property name="floatable">1</property>
-                                        <property name="font"></property>
+                                        <property name="font">Britannic Bold,90,90,18,74,0</property>
                                         <property name="gripper">0</property>
                                         <property name="hidden">0</property>
                                         <property name="id">wxID_ANY</property>
@@ -177,8 +177,8 @@
                                 <property name="rows">0</property>
                                 <property name="vgap">0</property>
                                 <object class="sizeritem" expanded="0">
-                                    <property name="border">5</property>
-                                    <property name="flag">wxALL</property>
+                                    <property name="border">6</property>
+                                    <property name="flag">wxEXPAND|wxALL</property>
                                     <property name="proportion">0</property>
                                     <object class="wxStaticText" expanded="0">
                                         <property name="BottomDockable">1</property>
@@ -302,8 +302,8 @@
                                     </object>
                                 </object>
                                 <object class="sizeritem" expanded="0">
-                                    <property name="border">5</property>
-                                    <property name="flag">wxALL</property>
+                                    <property name="border">6</property>
+                                    <property name="flag">wxALL|wxEXPAND</property>
                                     <property name="proportion">0</property>
                                     <object class="wxStaticText" expanded="0">
                                         <property name="BottomDockable">1</property>
@@ -438,7 +438,7 @@
                                 </object>
                                 <object class="sizeritem" expanded="0">
                                     <property name="border">5</property>
-                                    <property name="flag">wxALL</property>
+                                    <property name="flag">wxTOP|wxBOTTOM|wxRIGHT</property>
                                     <property name="proportion">0</property>
                                     <object class="wxButton" expanded="0">
                                         <property name="BottomDockable">1</property>
@@ -450,7 +450,7 @@
                                         <property name="aui_position"></property>
                                         <property name="aui_row"></property>
                                         <property name="best_size"></property>
-                                        <property name="bg"></property>
+                                        <property name="bg">0,103,206</property>
                                         <property name="bitmap"></property>
                                         <property name="caption"></property>
                                         <property name="caption_visible">1</property>
@@ -466,7 +466,7 @@
                                         <property name="dock_fixed">0</property>
                                         <property name="docking">Left</property>
                                         <property name="enabled">1</property>
-                                        <property name="fg"></property>
+                                        <property name="fg">wxSYS_COLOUR_HIGHLIGHTTEXT</property>
                                         <property name="floatable">1</property>
                                         <property name="focus"></property>
                                         <property name="font"></property>
@@ -531,7 +531,7 @@
             <property name="minimum_size"></property>
             <property name="name">wxTransaksiPanel</property>
             <property name="pos"></property>
-            <property name="size">579,435</property>
+            <property name="size">746,490</property>
             <property name="subclass">; ; forward_declare</property>
             <property name="tooltip"></property>
             <property name="window_extra_style"></property>
@@ -862,7 +862,7 @@
                                         <property name="aui_position"></property>
                                         <property name="aui_row"></property>
                                         <property name="best_size"></property>
-                                        <property name="bg"></property>
+                                        <property name="bg">0,0,0</property>
                                         <property name="bitmap"></property>
                                         <property name="caption"></property>
                                         <property name="caption_visible">1</property>
@@ -878,7 +878,7 @@
                                         <property name="dock_fixed">0</property>
                                         <property name="docking">Left</property>
                                         <property name="enabled">1</property>
-                                        <property name="fg"></property>
+                                        <property name="fg">wxSYS_COLOUR_HIGHLIGHTTEXT</property>
                                         <property name="floatable">1</property>
                                         <property name="focus"></property>
                                         <property name="font"></property>
@@ -1208,7 +1208,7 @@
                                         <property name="aui_position"></property>
                                         <property name="aui_row"></property>
                                         <property name="best_size"></property>
-                                        <property name="bg"></property>
+                                        <property name="bg">0,103,206</property>
                                         <property name="bitmap"></property>
                                         <property name="caption"></property>
                                         <property name="caption_visible">1</property>
@@ -1224,7 +1224,7 @@
                                         <property name="dock_fixed">0</property>
                                         <property name="docking">Left</property>
                                         <property name="enabled">1</property>
-                                        <property name="fg"></property>
+                                        <property name="fg">wxSYS_COLOUR_HIGHLIGHTTEXT</property>
                                         <property name="floatable">1</property>
                                         <property name="focus"></property>
                                         <property name="font"></property>
@@ -2029,7 +2029,7 @@
                                         <property name="aui_position"></property>
                                         <property name="aui_row"></property>
                                         <property name="best_size"></property>
-                                        <property name="bg"></property>
+                                        <property name="bg">0,103,206</property>
                                         <property name="bitmap"></property>
                                         <property name="caption"></property>
                                         <property name="caption_visible">1</property>
@@ -2045,7 +2045,7 @@
                                         <property name="dock_fixed">0</property>
                                         <property name="docking">Left</property>
                                         <property name="enabled">1</property>
-                                        <property name="fg"></property>
+                                        <property name="fg">wxSYS_COLOUR_HIGHLIGHTTEXT</property>
                                         <property name="floatable">1</property>
                                         <property name="focus"></property>
                                         <property name="font"></property>
@@ -2101,7 +2101,7 @@
                                         <property name="aui_position"></property>
                                         <property name="aui_row"></property>
                                         <property name="best_size"></property>
-                                        <property name="bg"></property>
+                                        <property name="bg">251,0,0</property>
                                         <property name="bitmap"></property>
                                         <property name="caption"></property>
                                         <property name="caption_visible">1</property>
@@ -2117,7 +2117,7 @@
                                         <property name="dock_fixed">0</property>
                                         <property name="docking">Left</property>
                                         <property name="enabled">1</property>
-                                        <property name="fg"></property>
+                                        <property name="fg">wxSYS_COLOUR_HIGHLIGHTTEXT</property>
                                         <property name="floatable">1</property>
                                         <property name="focus"></property>
                                         <property name="font"></property>
@@ -2165,7 +2165,7 @@
                 </object>
             </object>
         </object>
-        <object class="Panel" expanded="1">
+        <object class="Panel" expanded="0">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
             <property name="bg"></property>
@@ -2181,22 +2181,22 @@
             <property name="minimum_size"></property>
             <property name="name">wxProdukPanel</property>
             <property name="pos"></property>
-            <property name="size">579,435</property>
+            <property name="size">722,487</property>
             <property name="subclass">; ; forward_declare</property>
             <property name="tooltip"></property>
             <property name="window_extra_style"></property>
             <property name="window_name"></property>
             <property name="window_style">wxTAB_TRAVERSAL</property>
-            <object class="wxBoxSizer" expanded="1">
+            <object class="wxBoxSizer" expanded="0">
                 <property name="minimum_size"></property>
                 <property name="name">bSizer13</property>
                 <property name="orient">wxVERTICAL</property>
                 <property name="permission">none</property>
-                <object class="sizeritem" expanded="1">
+                <object class="sizeritem" expanded="0">
                     <property name="border">5</property>
                     <property name="flag">wxEXPAND</property>
                     <property name="proportion">0</property>
-                    <object class="wxBoxSizer" expanded="1">
+                    <object class="wxBoxSizer" expanded="0">
                         <property name="minimum_size"></property>
                         <property name="name">bSizer14</property>
                         <property name="orient">wxHORIZONTAL</property>
@@ -2555,7 +2555,7 @@
                                 <property name="aui_position"></property>
                                 <property name="aui_row"></property>
                                 <property name="best_size"></property>
-                                <property name="bg"></property>
+                                <property name="bg">0,0,0</property>
                                 <property name="bitmap"></property>
                                 <property name="caption"></property>
                                 <property name="caption_visible">1</property>
@@ -2571,7 +2571,7 @@
                                 <property name="dock_fixed">0</property>
                                 <property name="docking">Left</property>
                                 <property name="enabled">1</property>
-                                <property name="fg"></property>
+                                <property name="fg">wxSYS_COLOUR_HIGHLIGHTTEXT</property>
                                 <property name="floatable">1</property>
                                 <property name="focus"></property>
                                 <property name="font"></property>
@@ -2827,7 +2827,7 @@
                                             <object class="sizeritem" expanded="0">
                                                 <property name="border">5</property>
                                                 <property name="flag">wxALL</property>
-                                                <property name="proportion">0</property>
+                                                <property name="proportion">1</property>
                                                 <object class="wxStaticText" expanded="0">
                                                     <property name="BottomDockable">1</property>
                                                     <property name="LeftDockable">1</property>
@@ -2888,7 +2888,7 @@
                                             <object class="sizeritem" expanded="0">
                                                 <property name="border">5</property>
                                                 <property name="flag">wxALL</property>
-                                                <property name="proportion">0</property>
+                                                <property name="proportion">1</property>
                                                 <object class="wxStaticText" expanded="0">
                                                     <property name="BottomDockable">1</property>
                                                     <property name="LeftDockable">1</property>
@@ -2949,7 +2949,7 @@
                                             <object class="sizeritem" expanded="0">
                                                 <property name="border">5</property>
                                                 <property name="flag">wxALL</property>
-                                                <property name="proportion">0</property>
+                                                <property name="proportion">1</property>
                                                 <object class="wxStaticText" expanded="0">
                                                     <property name="BottomDockable">1</property>
                                                     <property name="LeftDockable">1</property>
@@ -3235,7 +3235,7 @@
                                                     <property name="aui_position"></property>
                                                     <property name="aui_row"></property>
                                                     <property name="best_size"></property>
-                                                    <property name="bg"></property>
+                                                    <property name="bg">0,103,206</property>
                                                     <property name="bitmap"></property>
                                                     <property name="caption"></property>
                                                     <property name="caption_visible">1</property>
@@ -3251,7 +3251,7 @@
                                                     <property name="dock_fixed">0</property>
                                                     <property name="docking">Left</property>
                                                     <property name="enabled">1</property>
-                                                    <property name="fg"></property>
+                                                    <property name="fg">wxSYS_COLOUR_HIGHLIGHTTEXT</property>
                                                     <property name="floatable">1</property>
                                                     <property name="focus"></property>
                                                     <property name="font"></property>
@@ -3300,11 +3300,11 @@
                         </object>
                     </object>
                 </object>
-                <object class="sizeritem" expanded="1">
+                <object class="sizeritem" expanded="0">
                     <property name="border">5</property>
                     <property name="flag"></property>
                     <property name="proportion">0</property>
-                    <object class="wxBoxSizer" expanded="1">
+                    <object class="wxBoxSizer" expanded="0">
                         <property name="minimum_size"></property>
                         <property name="name">bSizer15</property>
                         <property name="orient">wxHORIZONTAL</property>
@@ -3397,7 +3397,7 @@
                                 <property name="window_style"></property>
                             </object>
                         </object>
-                        <object class="sizeritem" expanded="1">
+                        <object class="sizeritem" expanded="0">
                             <property name="border">5</property>
                             <property name="flag">wxEXPAND</property>
                             <property name="proportion">1</property>
@@ -3802,7 +3802,7 @@
                                         <property name="aui_position"></property>
                                         <property name="aui_row"></property>
                                         <property name="best_size"></property>
-                                        <property name="bg"></property>
+                                        <property name="bg">0,103,206</property>
                                         <property name="bitmap"></property>
                                         <property name="caption"></property>
                                         <property name="caption_visible">1</property>
@@ -3818,7 +3818,7 @@
                                         <property name="dock_fixed">0</property>
                                         <property name="docking">Left</property>
                                         <property name="enabled">1</property>
-                                        <property name="fg"></property>
+                                        <property name="fg">wxSYS_COLOUR_HIGHLIGHTTEXT</property>
                                         <property name="floatable">1</property>
                                         <property name="focus"></property>
                                         <property name="font"></property>
@@ -3874,7 +3874,7 @@
                                         <property name="aui_position"></property>
                                         <property name="aui_row"></property>
                                         <property name="best_size"></property>
-                                        <property name="bg"></property>
+                                        <property name="bg">251,0,0</property>
                                         <property name="bitmap"></property>
                                         <property name="caption"></property>
                                         <property name="caption_visible">1</property>
@@ -3890,7 +3890,7 @@
                                         <property name="dock_fixed">0</property>
                                         <property name="docking">Left</property>
                                         <property name="enabled">1</property>
-                                        <property name="fg"></property>
+                                        <property name="fg">wxSYS_COLOUR_HIGHLIGHTTEXT</property>
                                         <property name="floatable">1</property>
                                         <property name="focus"></property>
                                         <property name="font"></property>
@@ -3938,7 +3938,7 @@
                 </object>
             </object>
         </object>
-        <object class="Panel" expanded="0">
+        <object class="Panel" expanded="1">
             <property name="aui_managed">0</property>
             <property name="aui_manager_style">wxAUI_MGR_DEFAULT</property>
             <property name="bg"></property>
@@ -3954,7 +3954,7 @@
             <property name="minimum_size"></property>
             <property name="name">wxSuplierPanel1</property>
             <property name="pos"></property>
-            <property name="size">579,435</property>
+            <property name="size">705,496</property>
             <property name="subclass">; ; forward_declare</property>
             <property name="tooltip"></property>
             <property name="window_extra_style"></property>
@@ -4328,7 +4328,7 @@
                                 <property name="aui_position"></property>
                                 <property name="aui_row"></property>
                                 <property name="best_size"></property>
-                                <property name="bg"></property>
+                                <property name="bg">0,0,0</property>
                                 <property name="bitmap"></property>
                                 <property name="caption"></property>
                                 <property name="caption_visible">1</property>
@@ -4344,7 +4344,7 @@
                                 <property name="dock_fixed">0</property>
                                 <property name="docking">Left</property>
                                 <property name="enabled">1</property>
-                                <property name="fg"></property>
+                                <property name="fg">wxSYS_COLOUR_HIGHLIGHTTEXT</property>
                                 <property name="floatable">1</property>
                                 <property name="focus"></property>
                                 <property name="font"></property>
@@ -5008,7 +5008,7 @@
                                                     <property name="aui_position"></property>
                                                     <property name="aui_row"></property>
                                                     <property name="best_size"></property>
-                                                    <property name="bg"></property>
+                                                    <property name="bg">0,103,206</property>
                                                     <property name="bitmap"></property>
                                                     <property name="caption"></property>
                                                     <property name="caption_visible">1</property>
@@ -5024,7 +5024,7 @@
                                                     <property name="dock_fixed">0</property>
                                                     <property name="docking">Left</property>
                                                     <property name="enabled">1</property>
-                                                    <property name="fg"></property>
+                                                    <property name="fg">wxSYS_COLOUR_HIGHLIGHTTEXT</property>
                                                     <property name="floatable">1</property>
                                                     <property name="focus"></property>
                                                     <property name="font"></property>
@@ -5575,7 +5575,7 @@
                                         <property name="aui_position"></property>
                                         <property name="aui_row"></property>
                                         <property name="best_size"></property>
-                                        <property name="bg"></property>
+                                        <property name="bg">0,103,206</property>
                                         <property name="bitmap"></property>
                                         <property name="caption"></property>
                                         <property name="caption_visible">1</property>
@@ -5591,7 +5591,7 @@
                                         <property name="dock_fixed">0</property>
                                         <property name="docking">Left</property>
                                         <property name="enabled">1</property>
-                                        <property name="fg"></property>
+                                        <property name="fg">wxSYS_COLOUR_HIGHLIGHTTEXT</property>
                                         <property name="floatable">1</property>
                                         <property name="focus"></property>
                                         <property name="font"></property>
@@ -5647,7 +5647,7 @@
                                         <property name="aui_position"></property>
                                         <property name="aui_row"></property>
                                         <property name="best_size"></property>
-                                        <property name="bg"></property>
+                                        <property name="bg">251,0,0</property>
                                         <property name="bitmap"></property>
                                         <property name="caption"></property>
                                         <property name="caption_visible">1</property>
@@ -5663,7 +5663,7 @@
                                         <property name="dock_fixed">0</property>
                                         <property name="docking">Left</property>
                                         <property name="enabled">1</property>
-                                        <property name="fg"></property>
+                                        <property name="fg">wxSYS_COLOUR_HIGHLIGHTTEXT</property>
                                         <property name="floatable">1</property>
                                         <property name="focus"></property>
                                         <property name="font"></property>

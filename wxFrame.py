@@ -46,6 +46,8 @@ class wxLoginPanel ( wx.Panel ):
 	def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 500,300 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
 		wx.Panel.__init__ ( self, parent, id = id, pos = pos, size = size, style = style, name = name )
 
+		self.SetBackgroundColour( wx.Colour( 144, 144, 144 ) )
+
 		bSizer3 = wx.BoxSizer( wx.HORIZONTAL )
 
 		bSizer32 = wx.BoxSizer( wx.VERTICAL )
@@ -54,6 +56,8 @@ class wxLoginPanel ( wx.Panel ):
 
 		self.m_staticText6 = wx.StaticText( self, wx.ID_ANY, u"LOGIN", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText6.Wrap( -1 )
+
+		self.m_staticText6.SetFont( wx.Font( 18, wx.FONTFAMILY_SWISS, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Britannic Bold" ) )
 
 		bSizer34.Add( self.m_staticText6, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
@@ -65,7 +69,7 @@ class wxLoginPanel ( wx.Panel ):
 		self.m_staticText10 = wx.StaticText( self, wx.ID_ANY, u"ID Pegawai", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText10.Wrap( -1 )
 
-		gSizer3.Add( self.m_staticText10, 0, wx.ALL, 5 )
+		gSizer3.Add( self.m_staticText10, 0, wx.EXPAND|wx.ALL, 6 )
 
 		self.textCtrlIdPeg = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
 		gSizer3.Add( self.textCtrlIdPeg, 0, wx.ALL, 5 )
@@ -73,7 +77,7 @@ class wxLoginPanel ( wx.Panel ):
 		self.m_staticText8 = wx.StaticText( self, wx.ID_ANY, u"Password", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText8.Wrap( -1 )
 
-		gSizer3.Add( self.m_staticText8, 0, wx.ALL, 5 )
+		gSizer3.Add( self.m_staticText8, 0, wx.ALL|wx.EXPAND, 6 )
 
 		self.textCtrlPassword = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, wx.TE_PASSWORD )
 		gSizer3.Add( self.textCtrlPassword, 0, wx.ALL, 5 )
@@ -82,7 +86,10 @@ class wxLoginPanel ( wx.Panel ):
 		gSizer3.Add( ( 0, 0), 1, wx.EXPAND, 5 )
 
 		self.btnLogin = wx.Button( self, wx.ID_ANY, u"LOGIN", wx.DefaultPosition, wx.DefaultSize, 0 )
-		gSizer3.Add( self.btnLogin, 0, wx.ALL, 5 )
+		self.btnLogin.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
+		self.btnLogin.SetBackgroundColour( wx.Colour( 0, 103, 206 ) )
+
+		gSizer3.Add( self.btnLogin, 0, wx.TOP|wx.BOTTOM|wx.RIGHT, 5 )
 
 
 		bSizer32.Add( gSizer3, 0, wx.ALIGN_CENTER_HORIZONTAL, 5 )
@@ -112,7 +119,7 @@ class wxLoginPanel ( wx.Panel ):
 
 class wxTransaksiPanel ( wx.Panel ):
 
-	def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 579,435 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
+	def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 746,490 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
 		wx.Panel.__init__ ( self, parent, id = id, pos = pos, size = size, style = style, name = name )
 
 		bSizer13 = wx.BoxSizer( wx.VERTICAL )
@@ -141,6 +148,9 @@ class wxTransaksiPanel ( wx.Panel ):
 		bSizer41.Add( self.m_button7, 0, wx.ALL, 5 )
 
 		self.m_button9 = wx.Button( self, wx.ID_ANY, u"Logout", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button9.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
+		self.m_button9.SetBackgroundColour( wx.Colour( 0, 0, 0 ) )
+
 		bSizer41.Add( self.m_button9, 0, wx.ALL, 5 )
 
 
@@ -178,6 +188,9 @@ class wxTransaksiPanel ( wx.Panel ):
 		gSizer1.Add( self.textCtrlNamaBrgTrans, 0, wx.ALL, 5 )
 
 		self.m_button12 = wx.Button( self, wx.ID_ANY, u"Tambah Data", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button12.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
+		self.m_button12.SetBackgroundColour( wx.Colour( 0, 103, 206 ) )
+
 		gSizer1.Add( self.m_button12, 0, wx.ALL, 5 )
 
 		self.m_staticText291 = wx.StaticText( self, wx.ID_ANY, u"Kuantitas", wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -268,9 +281,15 @@ class wxTransaksiPanel ( wx.Panel ):
 		gSizer2.Add( self.m_textCtrl19, 0, wx.ALL, 5 )
 
 		self.m_button91 = wx.Button( self, wx.ID_ANY, u"Update", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button91.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
+		self.m_button91.SetBackgroundColour( wx.Colour( 0, 103, 206 ) )
+
 		gSizer2.Add( self.m_button91, 0, wx.ALL, 5 )
 
 		self.m_button8 = wx.Button( self, wx.ID_ANY, u"Delete", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button8.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
+		self.m_button8.SetBackgroundColour( wx.Colour( 251, 0, 0 ) )
+
 		gSizer2.Add( self.m_button8, 0, wx.ALL, 5 )
 
 
@@ -301,7 +320,7 @@ class wxTransaksiPanel ( wx.Panel ):
 
 class wxProdukPanel ( wx.Panel ):
 
-	def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 579,435 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
+	def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 722,487 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
 		wx.Panel.__init__ ( self, parent, id = id, pos = pos, size = size, style = style, name = name )
 
 		bSizer13 = wx.BoxSizer( wx.VERTICAL )
@@ -334,6 +353,9 @@ class wxProdukPanel ( wx.Panel ):
 		bSizer14.Add( self.m_button7, 0, wx.ALL, 5 )
 
 		self.m_button9 = wx.Button( self, wx.ID_ANY, u"Logout", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button9.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
+		self.m_button9.SetBackgroundColour( wx.Colour( 0, 0, 0 ) )
+
 		bSizer14.Add( self.m_button9, 0, wx.ALL, 5 )
 
 
@@ -369,17 +391,17 @@ class wxProdukPanel ( wx.Panel ):
 		self.m_staticText281 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"Nama Produk", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText281.Wrap( -1 )
 
-		bSizer26.Add( self.m_staticText281, 0, wx.ALL, 5 )
+		bSizer26.Add( self.m_staticText281, 1, wx.ALL, 5 )
 
 		self.m_staticText291 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"Kualitas", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText291.Wrap( -1 )
 
-		bSizer26.Add( self.m_staticText291, 0, wx.ALL, 5 )
+		bSizer26.Add( self.m_staticText291, 1, wx.ALL, 5 )
 
 		self.m_staticText301 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"Harga", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText301.Wrap( -1 )
 
-		bSizer26.Add( self.m_staticText301, 0, wx.ALL, 5 )
+		bSizer26.Add( self.m_staticText301, 1, wx.ALL, 5 )
 
 
 		fgSizer9.Add( bSizer26, 1, wx.EXPAND, 5 )
@@ -401,6 +423,9 @@ class wxProdukPanel ( wx.Panel ):
 		bSizer28 = wx.BoxSizer( wx.VERTICAL )
 
 		self.m_button12 = wx.Button( self.m_panel7, wx.ID_ANY, u"Tambah Data", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button12.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
+		self.m_button12.SetBackgroundColour( wx.Colour( 0, 103, 206 ) )
+
 		bSizer28.Add( self.m_button12, 0, wx.ALL, 5 )
 
 
@@ -480,9 +505,15 @@ class wxProdukPanel ( wx.Panel ):
 		fgSizer5.Add( self.m_textCtrl19, 0, wx.ALL, 5 )
 
 		self.m_button91 = wx.Button( self, wx.ID_ANY, u"Update", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button91.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
+		self.m_button91.SetBackgroundColour( wx.Colour( 0, 103, 206 ) )
+
 		fgSizer5.Add( self.m_button91, 0, wx.ALL, 5 )
 
 		self.m_button8 = wx.Button( self, wx.ID_ANY, u"Delete", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button8.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
+		self.m_button8.SetBackgroundColour( wx.Colour( 251, 0, 0 ) )
+
 		fgSizer5.Add( self.m_button8, 0, wx.ALL, 5 )
 
 
@@ -505,7 +536,7 @@ class wxProdukPanel ( wx.Panel ):
 
 class wxSuplierPanel1 ( wx.Panel ):
 
-	def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 579,435 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
+	def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 705,496 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
 		wx.Panel.__init__ ( self, parent, id = id, pos = pos, size = size, style = style, name = name )
 
 		bSizer13 = wx.BoxSizer( wx.VERTICAL )
@@ -538,6 +569,9 @@ class wxSuplierPanel1 ( wx.Panel ):
 		bSizer14.Add( self.m_button46, 0, wx.ALL, 5 )
 
 		self.m_button9 = wx.Button( self, wx.ID_ANY, u"Logout", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button9.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
+		self.m_button9.SetBackgroundColour( wx.Colour( 0, 0, 0 ) )
+
 		bSizer14.Add( self.m_button9, 0, wx.ALL, 5 )
 
 
@@ -605,6 +639,9 @@ class wxSuplierPanel1 ( wx.Panel ):
 		bSizer28 = wx.BoxSizer( wx.VERTICAL )
 
 		self.m_button12 = wx.Button( self.m_panel7, wx.ID_ANY, u"Tambah Data", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button12.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
+		self.m_button12.SetBackgroundColour( wx.Colour( 0, 103, 206 ) )
+
 		bSizer28.Add( self.m_button12, 0, wx.ALL, 5 )
 
 
@@ -684,9 +721,15 @@ class wxSuplierPanel1 ( wx.Panel ):
 		fgSizer5.Add( self.m_textCtrl19, 0, wx.ALL, 5 )
 
 		self.m_button91 = wx.Button( self, wx.ID_ANY, u"Update", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button91.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
+		self.m_button91.SetBackgroundColour( wx.Colour( 0, 103, 206 ) )
+
 		fgSizer5.Add( self.m_button91, 0, wx.ALL, 5 )
 
 		self.m_button8 = wx.Button( self, wx.ID_ANY, u"Delete", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button8.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
+		self.m_button8.SetBackgroundColour( wx.Colour( 251, 0, 0 ) )
+
 		fgSizer5.Add( self.m_button8, 0, wx.ALL, 5 )
 
 
