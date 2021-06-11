@@ -9,7 +9,7 @@ class Database:
             self.db = mysql.connector.connect(host='localhost', database='data_baju',user='root',password='')
             if self.db.is_connected():
                 # db_info = self.db.get_server_info()
-                # print("Berhasil Terhubung ")
+                print("Berhasil Terhubung ")
                 self.cursor = self.db.cursor()
         except MysqlError as error:
             print("Tidak bisa terhubung database ", error)
@@ -80,3 +80,21 @@ db = Database()
 #         field = hasil[i][j]
 #         print(field)
 
+# id = 5
+# query = db.set_query("DELETE FROM `transaksi` WHERE id = '%s'" % (id))
+# #
+# if (query.commit()):
+#     print('didelete')
+# else:
+#     print('gagal')
+
+id = (2)
+nama = str("nama")
+kuantitas = int(12)
+hrg = int(10)
+value = (nama, kuantitas, hrg, id)
+query = db.set_query("UPDATE `transaksi` SET `nama barang`=%s,`kuantitas`=%s,`harga`=%s WHERE id = '%s'" % (value))
+up = input("update?")
+if up == "y":
+    if (query.commit()):
+        print("Berhasil")
