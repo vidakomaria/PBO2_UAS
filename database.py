@@ -36,11 +36,11 @@ class Database:
     def get_rowcount(self):
         return self.cursor.rowcount
 
-    def closeconn(self):
-        if self.db.is_connected():
-            self.commit.close()
-            self.db.close()
-            print("Koneksi ditutup")
+    # def closeconn(self):
+    #     if self.db.is_connected():
+    #         self.commit.close()
+    #         self.db.close()
+    #         print("Koneksi ditutup")
 
 
 # instance class database
@@ -51,13 +51,6 @@ class Database:
 #         .get_rowcount() > 0 ):
 #     print("Ada data yang ditambahkan")
 
-
-#
-# tes lihat semua data : CRUD (Read)
-# db.set_query(string_query="select * from admin")
-# print(db.get_tablecolumn())
-# print("Hasil :", db.fetchall())
-#
 # # tes tambah data : CRUD (Create)
 db = Database()
 
@@ -68,4 +61,22 @@ db = Database()
 # print(db.set_query().execute().get_rowcount())
 # db.execute()
 # db.get_rowcount()
+
+# tes lihat semua data : CRUD (Read)
+# query = db.set_query("select * from transaksi")
+# hasil = query.fetchall()
+# #
+# # print(query.get_tablecolumn())
+# for i in hasil:
+#     print(i)
+# print("Hasil :", hasil)
+# print(db.get_tablecolumn(tabel="transaksi"))
+
+# query = db.set_query("select * from `transaksi`")
+# hasil = query.fetchall()
+# print(hasil)
+# for i in range (len(hasil)):
+#     for j in range(len(hasil[i])):
+#         field = hasil[i][j]
+#         print(field)
 

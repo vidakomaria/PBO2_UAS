@@ -14,7 +14,6 @@ class panelLogin (wxFrame.wxLoginPanel):
         query = self.conn.set_query("SELECT * FROM admin WHERE id_pegawai = '%s'" % (idPegawai))
         result = query.fetchone()
         if (result is not None):
-            print(result)
             if result[3]== password:
                 wx.MessageBox("Login Berhasil")
                 self.textCtrlPassword.SetValue('')
