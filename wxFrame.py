@@ -256,6 +256,12 @@ class wxTransaksiPanel ( wx.Panel ):
 
 		gSizer2 = wx.GridSizer( 0, 2, 0, 0 )
 
+		self.m_button24 = wx.Button( self, wx.ID_ANY, u"Edit", wx.DefaultPosition, wx.DefaultSize, 0 )
+		gSizer2.Add( self.m_button24, 0, wx.ALL, 5 )
+
+
+		gSizer2.Add( ( 0, 0), 1, wx.EXPAND, 5 )
+
 		self.m_staticText292 = wx.StaticText( self, wx.ID_ANY, u"ID", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText292.Wrap( -1 )
 
@@ -315,6 +321,7 @@ class wxTransaksiPanel ( wx.Panel ):
 
 		# Connect Events
 		self.m_button12.Bind( wx.EVT_BUTTON, self.btnTmbhTransOnButtonClick )
+		self.m_button24.Bind( wx.EVT_BUTTON, self.btnEditTransOnButtonClick )
 		self.m_button91.Bind( wx.EVT_BUTTON, self.btnUpdateOnButtonClick )
 		self.m_button8.Bind( wx.EVT_BUTTON, self.btnDeleteOnButtonClick )
 		self.m_button23.Bind( wx.EVT_BUTTON, self.btnRefreshOnButtonClick )
@@ -325,6 +332,9 @@ class wxTransaksiPanel ( wx.Panel ):
 
 	# Virtual event handlers, overide them in your derived class
 	def btnTmbhTransOnButtonClick( self, event ):
+		event.Skip()
+
+	def btnEditTransOnButtonClick( self, event ):
 		event.Skip()
 
 	def btnUpdateOnButtonClick( self, event ):
