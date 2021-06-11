@@ -320,9 +320,9 @@ class wxTransaksiPanel ( wx.Panel ):
 		self.Layout()
 
 		# Connect Events
-		self.m_button12.Bind( wx.EVT_BUTTON, self.btnTmbhTransOnButtonClick )
+		self.m_button12.Bind( wx.EVT_BUTTON, self.btnTmbhOnButtonClick )
 		self.tabelTransaksi.Bind( wx.grid.EVT_GRID_SELECT_CELL, self.tabelTransaksiOnGridCmdSelectCell )
-		self.m_button24.Bind( wx.EVT_BUTTON, self.btnEditTransOnButtonClick )
+		self.m_button24.Bind( wx.EVT_BUTTON, self.btnEditOnButtonClick )
 		self.m_button91.Bind( wx.EVT_BUTTON, self.btnUpdateOnButtonClick )
 		self.m_button8.Bind( wx.EVT_BUTTON, self.btnDeleteOnButtonClick )
 		self.m_button23.Bind( wx.EVT_BUTTON, self.btnRefreshOnButtonClick )
@@ -332,13 +332,13 @@ class wxTransaksiPanel ( wx.Panel ):
 
 
 	# Virtual event handlers, overide them in your derived class
-	def btnTmbhTransOnButtonClick( self, event ):
+	def btnTmbhOnButtonClick( self, event ):
 		event.Skip()
 
 	def tabelTransaksiOnGridCmdSelectCell( self, event ):
 		event.Skip()
 
-	def btnEditTransOnButtonClick( self, event ):
+	def btnEditOnButtonClick( self, event ):
 		event.Skip()
 
 	def btnUpdateOnButtonClick( self, event ):

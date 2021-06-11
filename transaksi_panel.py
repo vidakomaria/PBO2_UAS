@@ -38,7 +38,7 @@ class panelTransaksi (wxFrame.wxTransaksiPanel):
         else:
             wx.MessageBox("Data Transaksi gagal Ditambah", "Gagal" | wx.ICON_ERROR)
 
-    def btnDeleteTransOnButtonClick( self, event ):
+    def btnDeleteOnButtonClick( self, event ):
         id = self.textCtrlIdUpdate.GetValue()
         query = self.conn.set_query("DELETE FROM `transaksi` WHERE id = '%s'" % (id))
 
@@ -46,7 +46,7 @@ class panelTransaksi (wxFrame.wxTransaksiPanel):
             if (query.commit()):
                 wx.MessageBox("Berhasil")
 
-    def btnUpdateTransOnButtonClick( self, event ):
+    def btnUpdateOnButtonClick( self, event ):
         id = self.textCtrlIdUpdate.GetValue()
         nama = self.textCtrlNamaBrgUpdate.GetValue()
         kuantitas = self.textCtrlKuantitasUpdate.GetValue()
@@ -61,7 +61,7 @@ class panelTransaksi (wxFrame.wxTransaksiPanel):
     def btnRefreshOnButtonClick( self, event ):
         self.showOnTabel()
 
-    def btnEditTransOnButtonClick( self, event ):
+    def btnEditOnButtonClick( self, event ):
         self.enableTextCtrl(enable=True)
 
     def showOnTextControl(self, row):

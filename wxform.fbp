@@ -1264,7 +1264,7 @@
                                         <property name="window_extra_style"></property>
                                         <property name="window_name"></property>
                                         <property name="window_style"></property>
-                                        <event name="OnButtonClick">btnTmbhTransOnButtonClick</event>
+                                        <event name="OnButtonClick">btnTmbhOnButtonClick</event>
                                     </object>
                                 </object>
                                 <object class="sizeritem" expanded="0">
@@ -1711,7 +1711,7 @@
                                         <property name="window_extra_style"></property>
                                         <property name="window_name"></property>
                                         <property name="window_style"></property>
-                                        <event name="OnButtonClick">btnEditTransOnButtonClick</event>
+                                        <event name="OnButtonClick">btnEditOnButtonClick</event>
                                     </object>
                                 </object>
                                 <object class="sizeritem" expanded="1">
