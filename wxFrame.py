@@ -256,29 +256,37 @@ class wxTransaksiPanel ( wx.Panel ):
 
 		gSizer2 = wx.GridSizer( 0, 2, 0, 0 )
 
+		self.m_staticText292 = wx.StaticText( self, wx.ID_ANY, u"ID", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText292.Wrap( -1 )
+
+		gSizer2.Add( self.m_staticText292, 0, wx.ALL, 5 )
+
+		self.textCtrlIdUpdate = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		gSizer2.Add( self.textCtrlIdUpdate, 0, wx.ALL, 5 )
+
 		self.m_staticText28 = wx.StaticText( self, wx.ID_ANY, u"Nama Barang", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText28.Wrap( -1 )
 
 		gSizer2.Add( self.m_staticText28, 0, wx.ALL, 5 )
 
-		self.m_textCtrl17 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		gSizer2.Add( self.m_textCtrl17, 0, wx.ALL, 5 )
+		self.textCtrlNamaBrgUpdate = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		gSizer2.Add( self.textCtrlNamaBrgUpdate, 0, wx.ALL, 5 )
 
 		self.m_staticText29 = wx.StaticText( self, wx.ID_ANY, u"Kuantitas", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText29.Wrap( -1 )
 
 		gSizer2.Add( self.m_staticText29, 0, wx.ALL, 5 )
 
-		self.m_textCtrl18 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		gSizer2.Add( self.m_textCtrl18, 0, wx.ALL, 5 )
+		self.textCtrlKuantitasUpdate = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		gSizer2.Add( self.textCtrlKuantitasUpdate, 0, wx.ALL, 5 )
 
 		self.m_staticText30 = wx.StaticText( self, wx.ID_ANY, u"Harga", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText30.Wrap( -1 )
 
 		gSizer2.Add( self.m_staticText30, 0, wx.ALL, 5 )
 
-		self.m_textCtrl19 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		gSizer2.Add( self.m_textCtrl19, 0, wx.ALL, 5 )
+		self.textCtrlHrgUpdate = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
+		gSizer2.Add( self.textCtrlHrgUpdate, 0, wx.ALL, 5 )
 
 		self.m_button91 = wx.Button( self, wx.ID_ANY, u"Update", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_button91.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
@@ -292,6 +300,9 @@ class wxTransaksiPanel ( wx.Panel ):
 
 		gSizer2.Add( self.m_button8, 0, wx.ALL, 5 )
 
+		self.m_button23 = wx.Button( self, wx.ID_ANY, u"Refresh", wx.DefaultPosition, wx.DefaultSize, 0 )
+		gSizer2.Add( self.m_button23, 0, wx.ALL, 5 )
+
 
 		bSizer15.Add( gSizer2, 0, wx.EXPAND, 5 )
 
@@ -304,6 +315,9 @@ class wxTransaksiPanel ( wx.Panel ):
 
 		# Connect Events
 		self.m_button12.Bind( wx.EVT_BUTTON, self.btnTmbhTransOnButtonClick )
+		self.m_button91.Bind( wx.EVT_BUTTON, self.btnUpdateOnButtonClick )
+		self.m_button8.Bind( wx.EVT_BUTTON, self.btnDeleteOnButtonClick )
+		self.m_button23.Bind( wx.EVT_BUTTON, self.btnRefreshOnButtonClick )
 
 	def __del__( self ):
 		pass
@@ -311,6 +325,15 @@ class wxTransaksiPanel ( wx.Panel ):
 
 	# Virtual event handlers, overide them in your derived class
 	def btnTmbhTransOnButtonClick( self, event ):
+		event.Skip()
+
+	def btnUpdateOnButtonClick( self, event ):
+		event.Skip()
+
+	def btnDeleteOnButtonClick( self, event ):
+		event.Skip()
+
+	def btnRefreshOnButtonClick( self, event ):
 		event.Skip()
 
 
