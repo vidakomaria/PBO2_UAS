@@ -52,9 +52,8 @@ class panelTransaksi (wxFrame.wxTransaksiPanel):
         kuantitas = self.textCtrlKuantitasUpdate.GetValue()
         hrg = self.textCtrlHrgUpdate.GetValue()
         value = (nama, kuantitas, hrg, id)
-        query = self.conn.set_query("UPDATE `transaksi` SET `nama barang` = %s, `kuantitas` = %s, `harga`= %s) WHERE id = '%s'" % (value))
-
-        if wx.MessageBox("Delete Transaksi?", "Confirm", wx.YES_NO | wx.NO_DEFAULT, self) == wx.YES:
+        query = self.conn.set_query("UPDATE `transaksi` SET `nama barang`='%s',`kuantitas`=%s,`harga`=%s WHERE id = '%s'" % (value))
+        if wx.MessageBox("Update Transaksi?", "Confirm", wx.YES_NO | wx.NO_DEFAULT, self) == wx.YES:
             if (query.commit()):
                 wx.MessageBox("Berhasil")
 
