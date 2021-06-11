@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Jun 2021 pada 15.05
+-- Waktu pembuatan: 11 Jun 2021 pada 15.49
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.4.15
 
@@ -50,7 +50,7 @@ INSERT INTO `admin` (`id`, `id_pegawai`, `nama`, `password`) VALUES
 
 CREATE TABLE `transaksi` (
   `id` int(10) NOT NULL,
-  `nama barang` varchar(35) NOT NULL,
+  `nama_barang` varchar(35) NOT NULL,
   `kuantitas` int(10) NOT NULL,
   `harga` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -59,7 +59,7 @@ CREATE TABLE `transaksi` (
 -- Dumping data untuk tabel `transaksi`
 --
 
-INSERT INTO `transaksi` (`id`, `nama barang`, `kuantitas`, `harga`) VALUES
+INSERT INTO `transaksi` (`id`, `nama_barang`, `kuantitas`, `harga`) VALUES
 (1, 'Celana', 1, 120000),
 (2, 'ww', 12, 12000);
 
@@ -93,7 +93,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
