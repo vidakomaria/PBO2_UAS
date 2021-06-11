@@ -61,6 +61,9 @@ class panelTransaksi (wxFrame.wxTransaksiPanel):
     def btnRefreshOnButtonClick( self, event ):
         self.showOnTabel()
 
+    def btnEditTransOnButtonClick( self, event ):
+        self.enableTextCtrl(enable=True)
+
     def showOnTextControl(self, row):
         id = self.tabelTransaksi.GetCellValue(row,0)
         namaBrg = self.tabelTransaksi.GetCellValue(row,1)
@@ -72,6 +75,8 @@ class panelTransaksi (wxFrame.wxTransaksiPanel):
         self.textCtrlKuantitasUpdate.SetValue(kuantitas)
         self.textCtrlHrgUpdate.SetValue(hrg)
 
+        self.enableTextCtrl(enable=False)
+
     def clearText(self):
         self.textCtrlNamaBrgTrans.SetValue('')
         self.textCtrlHrgTrans.SetValue('')
@@ -81,15 +86,15 @@ class panelTransaksi (wxFrame.wxTransaksiPanel):
         row = event.GetRow()
         self.showOnTextControl(row)
 
-    # def enableTextCtrl(self, enable=None):
-    #     if enable is True:
-    #         self.textCtrlIdUpdate.Enable()
-    #         self.textCtrlNamaBrgUpdate.Enable()
-    #         self.textCtrlKuantitasUpdate.Enable()
-    #         self.textCtrlHrgUpdate.Enable()
-    #     else:
-    #         self.textCtrlIdUpdate.Disable()
-    #         self.textCtrlNamaBrgUpdate.Disable()
-    #         self.textCtrlKuantitasUpdate.Disable()
-    #         self.textCtrlHrgUpdate.Disable()
+    def enableTextCtrl(self, enable=None):
+        if enable is True:
+            self.textCtrlIdUpdate.Enable()
+            self.textCtrlNamaBrgUpdate.Enable()
+            self.textCtrlKuantitasUpdate.Enable()
+            self.textCtrlHrgUpdate.Enable()
+        else:
+            self.textCtrlIdUpdate.Disable()
+            self.textCtrlNamaBrgUpdate.Disable()
+            self.textCtrlKuantitasUpdate.Disable()
+            self.textCtrlHrgUpdate.Disable()
 

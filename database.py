@@ -88,13 +88,13 @@ db = Database()
 # else:
 #     print('gagal')
 
-id = (2)
-nama = str("nama")
-kuantitas = int(12)
-hrg = int(10)
-value = (nama, kuantitas, hrg, id)
-query = db.set_query("UPDATE `transaksi` SET `nama barang`=%s,`kuantitas`=%s,`harga`=%s WHERE id = '%s'" % (value))
-up = input("update?")
-if up == "y":
-    if (query.commit()):
-        print("Berhasil")
+# id = (2)
+# nama = str("nama")
+# kuantitas = int(12)
+# hrg = int(10)
+# value = (nama, kuantitas, hrg, id)
+# query = db.set_query("UPDATE `transaksi` SET `nama barang`=%s,`kuantitas`=%s,`harga`=%s WHERE id = '%s'" % (value))
+# up = input("update?")
+# if up == "y":
+#     if (query.commit()):
+#         print("Berhasil")

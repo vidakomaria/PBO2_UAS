@@ -223,7 +223,7 @@ class wxTransaksiPanel ( wx.Panel ):
 		self.tabelTransaksi = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.tabelTransaksi.CreateGrid( 5, 4 )
+		self.tabelTransaksi.CreateGrid( 1, 4 )
 		self.tabelTransaksi.EnableEditing( True )
 		self.tabelTransaksi.EnableGridLines( True )
 		self.tabelTransaksi.EnableDragGridSize( False )
@@ -321,6 +321,7 @@ class wxTransaksiPanel ( wx.Panel ):
 
 		# Connect Events
 		self.m_button12.Bind( wx.EVT_BUTTON, self.btnTmbhTransOnButtonClick )
+		self.tabelTransaksi.Bind( wx.grid.EVT_GRID_SELECT_CELL, self.tabelTransaksiOnGridCmdSelectCell )
 		self.m_button24.Bind( wx.EVT_BUTTON, self.btnEditTransOnButtonClick )
 		self.m_button91.Bind( wx.EVT_BUTTON, self.btnUpdateOnButtonClick )
 		self.m_button8.Bind( wx.EVT_BUTTON, self.btnDeleteOnButtonClick )
@@ -332,6 +333,9 @@ class wxTransaksiPanel ( wx.Panel ):
 
 	# Virtual event handlers, overide them in your derived class
 	def btnTmbhTransOnButtonClick( self, event ):
+		event.Skip()
+
+	def tabelTransaksiOnGridCmdSelectCell( self, event ):
 		event.Skip()
 
 	def btnEditTransOnButtonClick( self, event ):
