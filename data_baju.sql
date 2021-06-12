@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Jun 2021 pada 15.05
+-- Waktu pembuatan: 12 Jun 2021 pada 02.58
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.4.15
 
@@ -45,23 +45,39 @@ INSERT INTO `admin` (`id`, `id_pegawai`, `nama`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `produk`
+--
+
+CREATE TABLE `produk` (
+  `idBrg` int(25) NOT NULL,
+  `nama barang` varchar(50) NOT NULL,
+  `merk` varchar(50) NOT NULL,
+  `harga` int(25) NOT NULL,
+  `stok` int(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `transaksi`
 --
 
 CREATE TABLE `transaksi` (
-  `id` int(10) NOT NULL,
+  `idTransaksi` int(10) NOT NULL,
+  `tanggal` date NOT NULL,
+  `idBrg` int(25) NOT NULL,
   `nama barang` varchar(35) NOT NULL,
   `kuantitas` int(10) NOT NULL,
-  `harga` int(10) NOT NULL
+  `harga` int(10) NOT NULL,
+  `keterangan` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `transaksi`
 --
 
-INSERT INTO `transaksi` (`id`, `nama barang`, `kuantitas`, `harga`) VALUES
-(1, 'Celana', 1, 120000),
-(2, 'ww', 12, 12000);
+INSERT INTO `transaksi` (`idTransaksi`, `tanggal`, `idBrg`, `nama barang`, `kuantitas`, `harga`, `keterangan`) VALUES
+(8, '0000-00-00', 2, 'qwe', 1, 123, 'ppp');
 
 --
 -- Indexes for dumped tables
@@ -74,10 +90,16 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `produk`
+--
+ALTER TABLE `produk`
+  ADD PRIMARY KEY (`idBrg`);
+
+--
 -- Indeks untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`idTransaksi`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -93,7 +115,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idTransaksi` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
