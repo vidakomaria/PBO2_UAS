@@ -13,6 +13,7 @@ class panelTransaksi (wxFrame.wxTransaksiPanel):
         query = self.conn.set_query("SELECT * FROM `transaksi`")
         hasil = query.fetchall()
         rowCount = self.conn.get_rowcount()
+        print(hasil)
 
         self.tabelTransaksi.DeleteRows(0, rowCount)
         self.tabelTransaksi.AppendRows(len(hasil))
@@ -22,7 +23,7 @@ class panelTransaksi (wxFrame.wxTransaksiPanel):
                 field = str(hasil[i][j])
                 self.tabelTransaksi.SetCellValue(i, j, field)
 
-        self.tabelTransaksi.AutoSize()
+        # self.tabelTransaksi.AutoSize()
 
     def btnDelOnButtonClick( self, event ):
         id = self.textCtrlId.GetValue()
@@ -41,7 +42,7 @@ class panelTransaksi (wxFrame.wxTransaksiPanel):
         hrg = self.textCtrlHrg.GetValue()
         ket = self.textCtrlKet.GetValue()
         value = (tgl, idBrg, nama, kuantitas, hrg, ket, id)
-        query = self.conn.set_query("UPDATE `transaksi` SET `tanggal`=%s,`idBrg`=%s,`nama barang`='%s',`kuantitas`=%s,`harga`=%s,`keterangan`='%s' WHERE idTransaksi = '%s'" % (value))
+        query = self.conn.set_query("UPDATE `transaksi` SET `tanggal`='%s',`idBrg`=%s,`nama barang`='%s',`kuantitas`=%s,`harga`=%s,`keterangan`='%s' WHERE idTransaksi = '%s'" % (value))
         if wx.MessageBox("Update Transaksi?", "Confirm", wx.YES_NO | wx.NO_DEFAULT, self) == wx.YES:
             if (query.commit()):
                 wx.MessageBox("Berhasil")

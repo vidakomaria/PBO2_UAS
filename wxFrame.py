@@ -18,7 +18,7 @@ import wx.grid
 class Frame ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 630,430 ), style = wx.DEFAULT_FRAME_STYLE|wx.MAXIMIZE_BOX|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 720,420 ), style = wx.DEFAULT_FRAME_STYLE|wx.MAXIMIZE_BOX|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 
@@ -43,7 +43,7 @@ class Frame ( wx.Frame ):
 
 class wxLoginPanel ( wx.Panel ):
 
-	def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 630,430 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
+	def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 720,420 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
 		wx.Panel.__init__ ( self, parent, id = id, pos = pos, size = size, style = style, name = name )
 
 		self.SetBackgroundColour( wx.Colour( 144, 144, 144 ) )
@@ -151,11 +151,10 @@ class wxLoginPanel ( wx.Panel ):
 
 class wxTransaksiPanel ( wx.Panel ):
 
-	def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 630,430 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
+	def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 720,420 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
 		wx.Panel.__init__ ( self, parent, id = id, pos = pos, size = size, style = style, name = name )
 
 		self.SetBackgroundColour( wx.Colour( 255, 255, 255 ) )
-		self.SetMaxSize( wx.Size( 900,600 ) )
 
 		bSizer13 = wx.BoxSizer( wx.VERTICAL )
 
@@ -214,23 +213,29 @@ class wxTransaksiPanel ( wx.Panel ):
 		bSizer36.Fit( self.m_panel13 )
 		bSizer13.Add( self.m_panel13, 0, wx.EXPAND |wx.ALL, 5 )
 
-		bSizer20 = wx.BoxSizer( wx.VERTICAL )
+		bSizer187 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_panel10 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		bSizer74 = wx.BoxSizer( wx.VERTICAL )
+		self.m_button23 = wx.Button( self, wx.ID_ANY, u"Refresh", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button23.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Barlow Medium" ) )
 
-		self.m_button12 = wx.Button( self.m_panel10, wx.ID_ANY, u"Add", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer187.Add( self.m_button23, 0, 0, 5 )
+
+		self.m_button24 = wx.Button( self, wx.ID_ANY, u"Edit", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button24.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Barlow Medium" ) )
+
+		bSizer187.Add( self.m_button24, 0, 0, 5 )
+
+		self.m_button12 = wx.Button( self, wx.ID_ANY, u"Add", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_button12.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Barlow Medium" ) )
 		self.m_button12.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
 		self.m_button12.SetBackgroundColour( wx.Colour( 0, 103, 206 ) )
 
-		bSizer74.Add( self.m_button12, 0, wx.ALL|wx.ALIGN_RIGHT, 5 )
+		bSizer187.Add( self.m_button12, 0, 0, 5 )
 
 
-		self.m_panel10.SetSizer( bSizer74 )
-		self.m_panel10.Layout()
-		bSizer74.Fit( self.m_panel10 )
-		bSizer20.Add( self.m_panel10, 0, wx.ALL|wx.ALIGN_RIGHT, 5 )
+		bSizer13.Add( bSizer187, 0, 0, 5 )
+
+		bSizer20 = wx.BoxSizer( wx.VERTICAL )
 
 		bSizer38 = wx.BoxSizer( wx.HORIZONTAL )
 
@@ -363,31 +368,19 @@ class wxTransaksiPanel ( wx.Panel ):
 		bSizer62.Fit( self.m_panel11 )
 		bSizer38.Add( self.m_panel11, 0, wx.ALL, 5 )
 
-		self.m_panel12 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
 		bSizer64 = wx.BoxSizer( wx.VERTICAL )
 
-		bSizer66 = wx.BoxSizer( wx.HORIZONTAL )
-
-		self.m_button24 = wx.Button( self.m_panel12, wx.ID_ANY, u"Edit", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer66.Add( self.m_button24, 0, wx.ALL, 5 )
-
-		self.m_button23 = wx.Button( self.m_panel12, wx.ID_ANY, u"Refresh", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer66.Add( self.m_button23, 0, wx.ALL, 5 )
-
-
-		bSizer64.Add( bSizer66, 0, wx.ALIGN_RIGHT, 5 )
-
-		self.tabelTransaksi = wx.grid.Grid( self.m_panel12, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.tabelTransaksi = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 450,270 ), 0 )
 
 		# Grid
-		self.tabelTransaksi.CreateGrid( 1, 7 )
-		self.tabelTransaksi.EnableEditing( True )
+		self.tabelTransaksi.CreateGrid( 10, 7 )
+		self.tabelTransaksi.EnableEditing( False )
 		self.tabelTransaksi.EnableGridLines( True )
 		self.tabelTransaksi.EnableDragGridSize( False )
 		self.tabelTransaksi.SetMargins( 0, 0 )
 
 		# Columns
-		self.tabelTransaksi.AutoSizeColumns()
+		self.tabelTransaksi.SetColSize( 0, 60 )
 		self.tabelTransaksi.EnableDragColMove( False )
 		self.tabelTransaksi.EnableDragColSize( True )
 		self.tabelTransaksi.SetColLabelSize( 30 )
@@ -401,9 +394,8 @@ class wxTransaksiPanel ( wx.Panel ):
 		self.tabelTransaksi.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
 
 		# Rows
-		self.tabelTransaksi.AutoSizeRows()
 		self.tabelTransaksi.EnableDragRowSize( True )
-		self.tabelTransaksi.SetRowLabelSize( 30 )
+		self.tabelTransaksi.SetRowLabelSize( 50 )
 		self.tabelTransaksi.SetRowLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
 
 		# Label Appearance
@@ -415,13 +407,10 @@ class wxTransaksiPanel ( wx.Panel ):
 		bSizer64.Add( self.tabelTransaksi, 0, wx.ALL, 5 )
 
 
-		self.m_panel12.SetSizer( bSizer64 )
-		self.m_panel12.Layout()
-		bSizer64.Fit( self.m_panel12 )
-		bSizer38.Add( self.m_panel12, 1, wx.EXPAND |wx.ALL, 5 )
+		bSizer38.Add( bSizer64, 0, 0, 5 )
 
 
-		bSizer20.Add( bSizer38, 1, wx.EXPAND, 5 )
+		bSizer20.Add( bSizer38, 1, 0, 5 )
 
 
 		bSizer13.Add( bSizer20, 0, wx.EXPAND, 5 )
@@ -434,11 +423,11 @@ class wxTransaksiPanel ( wx.Panel ):
 		self.m_button37.Bind( wx.EVT_BUTTON, self.btnTransaksiOnButtonClick )
 		self.m_button6.Bind( wx.EVT_BUTTON, self.btnProdukOnButtonClick )
 		self.m_button9.Bind( wx.EVT_BUTTON, self.btnLogoutOnButtonClick )
+		self.m_button23.Bind( wx.EVT_BUTTON, self.btnRefreshOnButtonClick )
+		self.m_button24.Bind( wx.EVT_BUTTON, self.btnEditOnButtonClick )
 		self.m_button12.Bind( wx.EVT_BUTTON, self.btnAddOnButtonClick )
 		self.m_button34.Bind( wx.EVT_BUTTON, self.btnUpdateOnButtonClick )
 		self.m_button35.Bind( wx.EVT_BUTTON, self.btnDelOnButtonClick )
-		self.m_button24.Bind( wx.EVT_BUTTON, self.btnEditOnButtonClick )
-		self.m_button23.Bind( wx.EVT_BUTTON, self.btnRefreshOnButtonClick )
 		self.tabelTransaksi.Bind( wx.grid.EVT_GRID_SELECT_CELL, self.tabelTransaksiOnGridCmdSelectCell )
 
 	def __del__( self ):
@@ -455,6 +444,12 @@ class wxTransaksiPanel ( wx.Panel ):
 	def btnLogoutOnButtonClick( self, event ):
 		event.Skip()
 
+	def btnRefreshOnButtonClick( self, event ):
+		event.Skip()
+
+	def btnEditOnButtonClick( self, event ):
+		event.Skip()
+
 	def btnAddOnButtonClick( self, event ):
 		event.Skip()
 
@@ -462,12 +457,6 @@ class wxTransaksiPanel ( wx.Panel ):
 		event.Skip()
 
 	def btnDelOnButtonClick( self, event ):
-		event.Skip()
-
-	def btnEditOnButtonClick( self, event ):
-		event.Skip()
-
-	def btnRefreshOnButtonClick( self, event ):
 		event.Skip()
 
 	def tabelTransaksiOnGridCmdSelectCell( self, event ):
@@ -480,7 +469,7 @@ class wxTransaksiPanel ( wx.Panel ):
 
 class wxAddTransaksiPanel ( wx.Panel ):
 
-	def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 630,430 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
+	def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 720,420 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
 		wx.Panel.__init__ ( self, parent, id = id, pos = pos, size = size, style = style, name = name )
 
 		self.SetBackgroundColour( wx.Colour( 255, 255, 255 ) )
@@ -684,7 +673,7 @@ class wxAddTransaksiPanel ( wx.Panel ):
 
 class wxProdukPanel ( wx.Panel ):
 
-	def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 630,430 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
+	def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 720,420 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
 		wx.Panel.__init__ ( self, parent, id = id, pos = pos, size = size, style = style, name = name )
 
 		self.SetBackgroundColour( wx.Colour( 255, 255, 255 ) )
@@ -747,23 +736,29 @@ class wxProdukPanel ( wx.Panel ):
 		bSizer36.Fit( self.m_panel13 )
 		bSizer13.Add( self.m_panel13, 0, wx.EXPAND |wx.ALL, 5 )
 
-		bSizer20 = wx.BoxSizer( wx.VERTICAL )
+		bSizer66 = wx.BoxSizer( wx.HORIZONTAL )
 
-		self.m_panel10 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		bSizer74 = wx.BoxSizer( wx.VERTICAL )
+		self.m_button24 = wx.Button( self, wx.ID_ANY, u"Edit", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button24.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Barlow Medium" ) )
 
-		self.m_button12 = wx.Button( self.m_panel10, wx.ID_ANY, u"Add", wx.DefaultPosition, wx.DefaultSize, 0 )
+		bSizer66.Add( self.m_button24, 0, wx.ALL, 5 )
+
+		self.m_button23 = wx.Button( self, wx.ID_ANY, u"Refresh", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button23.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Barlow Medium" ) )
+
+		bSizer66.Add( self.m_button23, 0, wx.ALL, 5 )
+
+		self.m_button12 = wx.Button( self, wx.ID_ANY, u"Add", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_button12.SetFont( wx.Font( 11, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Barlow Medium" ) )
 		self.m_button12.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_HIGHLIGHTTEXT ) )
 		self.m_button12.SetBackgroundColour( wx.Colour( 0, 103, 206 ) )
 
-		bSizer74.Add( self.m_button12, 0, wx.ALL|wx.ALIGN_RIGHT, 5 )
+		bSizer66.Add( self.m_button12, 0, wx.ALL, 5 )
 
 
-		self.m_panel10.SetSizer( bSizer74 )
-		self.m_panel10.Layout()
-		bSizer74.Fit( self.m_panel10 )
-		bSizer20.Add( self.m_panel10, 0, wx.ALL|wx.ALIGN_RIGHT, 5 )
+		bSizer13.Add( bSizer66, 0, 0, 5 )
+
+		bSizer20 = wx.BoxSizer( wx.HORIZONTAL )
 
 		bSizer38 = wx.BoxSizer( wx.HORIZONTAL )
 
@@ -866,31 +861,19 @@ class wxProdukPanel ( wx.Panel ):
 		bSizer62.Fit( self.m_panel11 )
 		bSizer38.Add( self.m_panel11, 0, wx.ALL, 5 )
 
-		self.m_panel12 = wx.Panel( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
-		bSizer64 = wx.BoxSizer( wx.VERTICAL )
+		bSizer641 = wx.BoxSizer( wx.VERTICAL )
 
-		bSizer66 = wx.BoxSizer( wx.HORIZONTAL )
-
-		self.m_button24 = wx.Button( self.m_panel12, wx.ID_ANY, u"Edit", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer66.Add( self.m_button24, 0, wx.ALL, 5 )
-
-		self.m_button23 = wx.Button( self.m_panel12, wx.ID_ANY, u"Refresh", wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer66.Add( self.m_button23, 0, wx.ALL, 5 )
-
-
-		bSizer64.Add( bSizer66, 0, wx.ALIGN_RIGHT, 5 )
-
-		self.tabelProduk = wx.grid.Grid( self.m_panel12, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.tabelProduk = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 450,270 ), 0 )
 
 		# Grid
-		self.tabelProduk.CreateGrid( 1, 5 )
-		self.tabelProduk.EnableEditing( True )
+		self.tabelProduk.CreateGrid( 15, 5 )
+		self.tabelProduk.EnableEditing( False )
 		self.tabelProduk.EnableGridLines( True )
 		self.tabelProduk.EnableDragGridSize( False )
 		self.tabelProduk.SetMargins( 0, 0 )
 
 		# Columns
-		self.tabelProduk.AutoSizeColumns()
+		self.tabelProduk.SetColSize( 0, 60 )
 		self.tabelProduk.EnableDragColMove( False )
 		self.tabelProduk.EnableDragColSize( True )
 		self.tabelProduk.SetColLabelSize( 30 )
@@ -902,9 +885,8 @@ class wxProdukPanel ( wx.Panel ):
 		self.tabelProduk.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
 
 		# Rows
-		self.tabelProduk.AutoSizeRows()
 		self.tabelProduk.EnableDragRowSize( True )
-		self.tabelProduk.SetRowLabelSize( 30 )
+		self.tabelProduk.SetRowLabelSize( 50 )
 		self.tabelProduk.SetRowLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
 
 		# Label Appearance
@@ -913,16 +895,13 @@ class wxProdukPanel ( wx.Panel ):
 		self.tabelProduk.SetDefaultCellAlignment( wx.ALIGN_LEFT, wx.ALIGN_TOP )
 		self.tabelProduk.SetFont( wx.Font( 10, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "Times New Roman" ) )
 
-		bSizer64.Add( self.tabelProduk, 0, wx.ALL, 5 )
+		bSizer641.Add( self.tabelProduk, 0, wx.ALL, 5 )
 
 
-		self.m_panel12.SetSizer( bSizer64 )
-		self.m_panel12.Layout()
-		bSizer64.Fit( self.m_panel12 )
-		bSizer38.Add( self.m_panel12, 1, wx.EXPAND |wx.ALL, 5 )
+		bSizer38.Add( bSizer641, 0, 0, 5 )
 
 
-		bSizer20.Add( bSizer38, 1, wx.EXPAND, 5 )
+		bSizer20.Add( bSizer38, 1, 0, 5 )
 
 
 		bSizer13.Add( bSizer20, 0, wx.EXPAND, 5 )
@@ -935,11 +914,11 @@ class wxProdukPanel ( wx.Panel ):
 		self.m_button37.Bind( wx.EVT_BUTTON, self.btnTransaksiOnButtonClick )
 		self.m_button6.Bind( wx.EVT_BUTTON, self.btnProdukOnButtonClick )
 		self.m_button9.Bind( wx.EVT_BUTTON, self.btnLogoutOnButtonClick )
+		self.m_button24.Bind( wx.EVT_BUTTON, self.btnEditOnButtonClick )
+		self.m_button23.Bind( wx.EVT_BUTTON, self.btnRefreshOnButtonClick )
 		self.m_button12.Bind( wx.EVT_BUTTON, self.btnAddOnButtonClick )
 		self.m_button34.Bind( wx.EVT_BUTTON, self.btnUpdateOnButtonClick )
 		self.m_button35.Bind( wx.EVT_BUTTON, self.btnDelOnButtonClick )
-		self.m_button24.Bind( wx.EVT_BUTTON, self.btnEditOnButtonClick )
-		self.m_button23.Bind( wx.EVT_BUTTON, self.btnRefreshOnButtonClick )
 		self.tabelProduk.Bind( wx.grid.EVT_GRID_SELECT_CELL, self.tabelTransaksiOnGridCmdSelectCell )
 
 	def __del__( self ):
@@ -956,6 +935,12 @@ class wxProdukPanel ( wx.Panel ):
 	def btnLogoutOnButtonClick( self, event ):
 		event.Skip()
 
+	def btnEditOnButtonClick( self, event ):
+		event.Skip()
+
+	def btnRefreshOnButtonClick( self, event ):
+		event.Skip()
+
 	def btnAddOnButtonClick( self, event ):
 		event.Skip()
 
@@ -963,12 +948,6 @@ class wxProdukPanel ( wx.Panel ):
 		event.Skip()
 
 	def btnDelOnButtonClick( self, event ):
-		event.Skip()
-
-	def btnEditOnButtonClick( self, event ):
-		event.Skip()
-
-	def btnRefreshOnButtonClick( self, event ):
 		event.Skip()
 
 	def tabelTransaksiOnGridCmdSelectCell( self, event ):
@@ -981,7 +960,7 @@ class wxProdukPanel ( wx.Panel ):
 
 class wxAddProdukPanel ( wx.Panel ):
 
-	def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 630,430 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
+	def __init__( self, parent, id = wx.ID_ANY, pos = wx.DefaultPosition, size = wx.Size( 720,420 ), style = wx.TAB_TRAVERSAL, name = wx.EmptyString ):
 		wx.Panel.__init__ ( self, parent, id = id, pos = pos, size = size, style = style, name = name )
 
 		self.SetBackgroundColour( wx.Colour( 255, 255, 255 ) )

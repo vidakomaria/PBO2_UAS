@@ -9,7 +9,7 @@ class Database:
             self.db = mysql.connector.connect(host='localhost', database='data_baju',user='root',password='')
             if self.db.is_connected():
                 # db_info = self.db.get_server_info()
-                print("Berhasil Terhubung ")
+                # print("Berhasil Terhubung ")
                 self.cursor = self.db.cursor()
         except MysqlError as error:
             print("Tidak bisa terhubung database ", error)
@@ -52,7 +52,7 @@ class Database:
 #     print("Ada data yang ditambahkan")
 
 # # tes tambah data : CRUD (Create)
-db = Database()
+# db = Database()
 
 # val = (nama, kuantitas, harga)
 #
