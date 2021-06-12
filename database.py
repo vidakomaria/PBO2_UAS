@@ -98,3 +98,15 @@ db = Database()
 # if up == "y":
 #     if (query.commit()):
 #         print("Berhasil")
+
+# id = 1
+# nama = "new"
+# merk = "merk"
+# hrg = 1
+# stok = 2
+# value = (nama, merk, hrg, stok, id)
+# query = db.set_query("UPDATE `produk` SET `nama barang`='%s',`merk`='%s',`harga`=%s,`stok`=%s WHERE `id`='%s'" % (value))
+# up = input()
+# if up=="y":
+#     if (query.commit()):
+#         print("Berhasil")

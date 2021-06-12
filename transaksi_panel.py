@@ -10,9 +10,8 @@ class panelTransaksi (wxFrame.wxTransaksiPanel):
         self.showOnTabel()
 
     def showOnTabel(self):
-        query = self.conn.set_query("select * from `transaksi`")
+        query = self.conn.set_query("SELECT * FROM `transaksi`")
         hasil = query.fetchall()
-        print(hasil)
         rowCount = self.conn.get_rowcount()
 
         self.tabelTransaksi.DeleteRows(0, rowCount)
@@ -25,34 +24,24 @@ class panelTransaksi (wxFrame.wxTransaksiPanel):
 
         self.tabelTransaksi.AutoSize()
 
-    def btnTmbhOnButtonClick( self, event ):
-        nama = self.textCtrlNamaBrgTrans.GetValue()
-        kuantitas = self.textCtrlKuantitasTrans.GetValue()
-        hrg = self.textCtrlHrgTrans.GetValue()
-        value = (nama, kuantitas, hrg)
-        query = self.conn.set_query ("INSERT INTO `transaksi`(`nama barang`, `kuantitas`, `harga`) VALUES (%s,%s,%s)",value)
-
-        if (query.commit().get_rowcount() > 0):
-            wx.MessageBox("Data Transaksi berhasil ditambahkan")
-            self.clearText()
-        else:
-            wx.MessageBox("Data Transaksi gagal Ditambah", "Gagal" | wx.ICON_ERROR)
-
-    def btnDeleteOnButtonClick( self, event ):
-        id = self.textCtrlIdUpdate.GetValue()
-        query = self.conn.set_query("DELETE FROM `transaksi` WHERE id = '%s'" % (id))
+    def btnDelOnButtonClick( self, event ):
+        id = self.textCtrlId.GetValue()
+        query = self.conn.set_query("DELETE FROM `transaksi` WHERE idTransaksi = '%s'" % (id))
 
         if wx.MessageBox("Delete Transaksi?", "Confirm", wx.YES_NO | wx.NO_DEFAULT, self) == wx.YES:
             if (query.commit()):
                 wx.MessageBox("Berhasil")
 
     def btnUpdateOnButtonClick( self, event ):
-        id = self.textCtrlIdUpdate.GetValue()
-        nama = self.textCtrlNamaBrgUpdate.GetValue()
-        kuantitas = self.textCtrlKuantitasUpdate.GetValue()
-        hrg = self.textCtrlHrgUpdate.GetValue()
-        value = (nama, kuantitas, hrg, id)
-        query = self.conn.set_query("UPDATE `transaksi` SET `nama barang`='%s',`kuantitas`=%s,`harga`=%s WHERE id = '%s'" % (value))
+        id = self.textCtrlId.GetValue()
+        tgl = self.textCtrlTgl.GetValue()
+        idBrg = self.textCtrlIdBrg.GetValue()
+        nama = self.textCtrlNamaBrg.GetValue()
+        kuantitas = self.textCtrlKuantitas.GetValue()
+        hrg = self.textCtrlHrg.GetValue()
+        ket = self.textCtrlKet.GetValue()
+        value = (tgl, idBrg, nama, kuantitas, hrg, ket, id)
+        query = self.conn.set_query("UPDATE `transaksi` SET `tanggal`=%s,`idBrg`=%s,`nama barang`='%s',`kuantitas`=%s,`harga`=%s,`keterangan`='%s' WHERE idTransaksi = '%s'" % (value))
         if wx.MessageBox("Update Transaksi?", "Confirm", wx.YES_NO | wx.NO_DEFAULT, self) == wx.YES:
             if (query.commit()):
                 wx.MessageBox("Berhasil")
@@ -65,21 +54,29 @@ class panelTransaksi (wxFrame.wxTransaksiPanel):
 
     def showOnTextControl(self, row):
         id = self.tabelTransaksi.GetCellValue(row,0)
-        namaBrg = self.tabelTransaksi.GetCellValue(row,1)
-        kuantitas = self.tabelTransaksi.GetCellValue(row,2)
-        hrg = self.tabelTransaksi.GetCellValue(row,3)
+        tgl = self.tabelTransaksi.GetCellValue(row,1)
+        idBrg = self.tabelTransaksi.GetCellValue(row,2)
+        namaBrg = self.tabelTransaksi.GetCellValue(row,3)
+        kuantitas = self.tabelTransaksi.GetCellValue(row,4)
+        hrg = self.tabelTransaksi.GetCellValue(row,5)
+        ket = self.tabelTransaksi.GetCellValue(row,6)
 
-        self.textCtrlIdUpdate.SetValue(id)
-        self.textCtrlNamaBrgUpdate.SetValue(namaBrg)
-        self.textCtrlKuantitasUpdate.SetValue(kuantitas)
-        self.textCtrlHrgUpdate.SetValue(hrg)
+        self.textCtrlId.SetValue(id)
+        self.textCtrlTgl.SetValue(tgl)
+        self.textCtrlIdBrg.SetValue(idBrg)
+        self.textCtrlNamaBrg.SetValue(namaBrg)
+        self.textCtrlKuantitas.SetValue(kuantitas)
+        self.textCtrlHrg.SetValue(hrg)
+        self.textCtrlKet.SetValue(ket)
 
         self.enableTextCtrl(enable=False)
 
     def clearText(self):
-        self.textCtrlNamaBrgTrans.SetValue('')
-        self.textCtrlHrgTrans.SetValue('')
-        self.textCtrlKuantitasTrans.SetValue('')
+        self.textCtrlIdBrg.SetValue('')
+        self.textCtrlNamaBrg.SetValue('')
+        self.textCtrlHrg.SetValue('')
+        self.textCtrlKuantitas.SetValue('')
+        self.textCtrlKet.SetValue('')
 
     def tabelTransaksiOnGridCmdSelectCell( self, event ):
         row = event.GetRow()
@@ -87,13 +84,35 @@ class panelTransaksi (wxFrame.wxTransaksiPanel):
 
     def enableTextCtrl(self, enable=None):
         if enable is True:
-            self.textCtrlIdUpdate.Enable()
-            self.textCtrlNamaBrgUpdate.Enable()
-            self.textCtrlKuantitasUpdate.Enable()
-            self.textCtrlHrgUpdate.Enable()
+            self.textCtrlId.Disable()
+            self.textCtrlTgl.Enable()
+            self.textCtrlIdBrg.Enable()
+            self.textCtrlNamaBrg.Enable()
+            self.textCtrlKuantitas.Enable()
+            self.textCtrlHrg.Enable()
+            self.textCtrlKet.Enable()
         else:
-            self.textCtrlIdUpdate.Disable()
-            self.textCtrlNamaBrgUpdate.Disable()
-            self.textCtrlKuantitasUpdate.Disable()
-            self.textCtrlHrgUpdate.Disable()
+            self.textCtrlId.Disable()
+            self.textCtrlTgl.Disable()
+            self.textCtrlIdBrg.Disable()
+            self.textCtrlNamaBrg.Disable()
+            self.textCtrlKuantitas.Disable()
+            self.textCtrlHrg.Disable()
+            self.textCtrlKet.Disable()
+
+    #menu
+
+    def btnProdukOnButtonClick( self, event ):
+        panel.Init.transaksi.Hide()
+        panel.Init.produk.Show()
+
+    def btnLogoutOnButtonClick( self, event ):
+        panel.Init.transaksi.Hide()
+        panel.Init.login.Show()
+
+    def btnAddOnButtonClick( self, event ):
+        panel.Init.transaksi.Hide()
+        panel.Init.addTransaksi.Show()
+
+
 

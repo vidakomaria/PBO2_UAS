@@ -11,6 +11,15 @@ class Frame (wxFrame.Frame):
     def FrameOnSize( self, event ):
         panel.Init.login.SetSize(self.GetSize())
         panel.Init.transaksi.SetSize(self.GetSize())
+        panel.Init.produk.SetSize(self.GetSize())
+
+
+    # def FrameOnSize( self, event ):
+    #     panel.Init.login.SetSize(self.GetSize())
+    #     panel.Init.transaksi.SetSize(self.GetSize())
+        # def frameMain_on_size(self, event):
+        #     routes.Init.loginPanel.SetSize(self.GetSize())
+        #     routes.Init.dashboardPanel.SetSize(self.GetSize())
 
 
 app = wx.App()
