@@ -19,7 +19,7 @@ class panelAddTransaksi(wxFrame.wxAddTransaksiPanel):
         value = (tgl, idBrg, nama, kuantitas, hrg, ket)
         query = self.conn.set_query ("INSERT INTO `transaksi`(`tanggal`, `idBrg`, `nama barang`, `kuantitas`, `harga`, `keterangan`) VALUES (%s,%s,%s,%s,%s,%s)",value)
 
-        if (query.commit().get_rowcount() > 0):
+        if (query.commit()):
             wx.MessageBox("Data Transaksi berhasil ditambahkan")
             self.clearText()
         else:

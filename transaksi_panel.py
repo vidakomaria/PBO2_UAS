@@ -13,7 +13,6 @@ class panelTransaksi (wxFrame.wxTransaksiPanel):
         query = self.conn.set_query("SELECT * FROM `transaksi`")
         hasil = query.fetchall()
         rowCount = self.conn.get_rowcount()
-        print(hasil)
 
         self.tabelTransaksi.DeleteRows(0, rowCount)
         self.tabelTransaksi.AppendRows(len(hasil))
@@ -33,7 +32,7 @@ class panelTransaksi (wxFrame.wxTransaksiPanel):
             if (query.commit()):
                 wx.MessageBox("Berhasil")
 
-    def btnUpdateOnButtonClick( self, event ):
+    def btnUpdateOnButtonClick( self, event ):      #overrides dari file wxFrame
         id = self.textCtrlId.GetValue()
         tgl = self.textCtrlTgl.GetValue()
         idBrg = self.textCtrlIdBrg.GetValue()
@@ -114,6 +113,7 @@ class panelTransaksi (wxFrame.wxTransaksiPanel):
     def btnAddOnButtonClick( self, event ):
         panel.Init.transaksi.Hide()
         panel.Init.addTransaksi.Show()
+
 
 
 

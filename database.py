@@ -28,11 +28,6 @@ class Database:
     def fetchall(self):
         return self.cursor.fetchall()
 
-    def get_tablecolumn(self, tabel = ""):
-        self.set_query("SELECT * FROM %s LIMIT 1;"%(tabel))
-        self.fetchone()
-        return [i[0] for i in self.cursor.description]
-
     def get_rowcount(self):
         return self.cursor.rowcount
 
